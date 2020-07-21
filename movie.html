@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>100 melhores TMDB</title>
+    <link rel="stylesheet" href="CSS/movie.css">
+    <link rel="stylesheet" href="CSS/bottomMenu.css">
+</head>
+
+<body>
+    <header>
+        <div id="nav"></div>
+    </header>
+    <nav>
+        <ul id="menu">
+            <li>
+                <a id="home" href="index.html?categoria=movie/top_rated"><img class="logo"
+                        src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+                        alt="home"></a>
+            </li>
+            <li class="toggle"><a id="home" href="#"><img class="menuIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/VisualEditor_-_Icon_-_Menu.svg/768px-VisualEditor_-_Icon_-_Menu.svg.png" alt="menu"></a></li>
+            <li id="100film" class="menuLayer">
+                <a href="index.html?categoria=movie/top_rated">Top 100 filmes</a>
+            </li>
+            <li id="100serie" class="menuLayer">
+                <a href="index.html?categoria=tv/top_rated">Top 100 séries</a>
+            </li>
+            <li id="cartaz" class="menuLayer">
+                <a href="index.html?categoria=movie/now_playing">Filmes em cartaz</a>
+            </li>
+        </ul>
+    </nav>
+    <section>
+        <div id="info">
+            <img id="poster" src="">
+            <div id="conteudo">
+                <h1 id="title"></h1>
+                <p id="infoTitle"></p>
+                <p id="nota"></p>
+                <h2>Sinopse</h2>
+                <p id="sinopse"></p>
+                <h2>Elenco</h2>
+                <div id="creditos"></div>
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+    <script src="js/queryString.js"></script>
+    <script src="js/moviedetails.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="js/btnMobile.js"></script>
+</body>
+
+</html>

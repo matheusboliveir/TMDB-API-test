@@ -1,0 +1,141 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    scrollbar-width: 0;
+    scroll-behavior: smooth;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+section{
+    background: url(https://image.tmdb.org/t/p/original/ejdD20cdHNFAYAN2DlqPToXKyzx.jpg);
+    background-size: contain;
+    width: 100%;
+    min-height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #0d253f;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.705); 
+  border-radius: 10px;
+  background-color: #091a2c;
+  margin: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01b4e4; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #018cb3; 
+}
+  #poster{
+      width: 100%;
+      background-color: #01b4e4;
+      order: 1;
+  }
+  #info{
+    width: 86vw;
+    max-width: 1200px;
+    background: rgba(13, 37, 63, 0.9);
+    color: #018cb3;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #title{
+    padding: 10px 0 0 0;
+    font-size: 24pt;
+    color: #01b4e4;
+    font-weight: bold;
+  }
+  #title span{
+    font-weight: normal;
+    color: #018cb3;
+    font-size: 20pt;
+  }
+  #infoTitle{
+    font-size: 13pt;
+  }
+  #conteudo{
+    order: 2;
+    width: 95%;
+    position: relative;
+    align-self: center;
+  }
+  #nota{
+    font-size: 16pt;
+    color: #01b4e4;
+    line-height: 60px;
+  }
+  #nota span{
+    font-weight: 900;
+    font-size: 18pt;
+    color: #018cb3;
+  }
+  h2{
+    padding: 5px;
+    font-size: 16pt;
+    font-weight: 600;
+    color: #01b4e4;
+  }
+  #sinopse{
+    font-size: 12pt;
+    overflow: auto;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+  }
+  #creditos{
+    width: 100%;
+    white-space: nowrap;
+    overflow: auto;
+  }
+  .person{
+    display: inline-block;
+    background-color: #01b4e4;
+    width: 130px;
+    height: 190px;
+    text-align: center;
+    border: #091a2c solid 1px;
+    border-radius: 8px;
+    margin: 3px;
+  }
+  .atorImg{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    background-size: cover;
+    background-position: center;
+    width:130px;
+    height: 150px;
+  }
+  .atorNome{
+    font-size: 10pt;
+    font-weight: 600;
+    color: #0d253f;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+  }
+  .atorCargo{
+    font-size: 8pt;
+    color: #091a2c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+  }
+  @media (min-width: 750px) {
+    #info {flex-direction: row;}
+    #poster{ flex-basis: 34%; width: 20%; height: auto;}
+    #conteudo{flex-basis: 66%; width: 40%;}
+  }
