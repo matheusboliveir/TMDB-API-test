@@ -1,47 +1,89 @@
-class MovieComponent extends HTMLElement {
-    constructor(){
-        super();
+import { ModalBoxComponent } from './modal-box-component.js';
+export class MovieComponent extends HTMLElement {
+    constructor(movie){
+      super();
+      this.movie = movie;
+      this.build();
     }
     build() {
-        const shadow = this.attachShadow({mode: 'open'});
-        let section = document.querySelector('section');
-        let h3 = document.createElement('h3');
-        let titulo = document.createElement('div');
-        titulo.className = 'titulo';
-        let film = document.createElement('div');
-        film.className = 'movies';
-        film.onclick = () => {
-          body.innerHTML = `<div id="backPopUp">
-          <span id="close">&times;</span>
-          <div id="modalPopup">
-              <img src="${poster.src}">
-              <div id="conteudo">
-                  <h3>${movie.name || movie.title}</h3>
-                  <div id="avaliacao"><span>&#9733;</span>&nbsp;&nbsp;${movie.vote_average}/10</div>
-                  <p>${movie.overview}</p>
-                  <a href="movie.html?id=${movie.id}&name=${movie.name}">Ver mais</a>
-              </div>
-          </div>
-      </div>`
-          // botão de fechar popup modal
-          document.querySelector('#close').addEventListener('click', () => {
-            document.querySelector('#modalBoxDiv').innerHTML = '';
-          });
-        };
-        let poster = document.createElement('img');
-        if (movie.poster_path === null || undefined) {
-          poster.src = `https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg`;
-        }
-        else {
-          poster.src = `https://image.tmdb.org/t/p/original${movie.poster_path}`;
-        }
-        h3.appendChild(document.createTextNode(movie.title || movie.name));
-        poster.className = 'posterMovies';
-        poster.title = movie.original_name || movie.original_title;
-        titulo.appendChild(h3);
-        film.appendChild(titulo);
-        film.appendChild(poster);
-        section.appendChild(film);
-      
+      const shadow = this.attachShadow({mode: 'open'});
+      const cardMovie = this.createCard();
+      cardMovie.appendChild(this.createTitle());
+      cardMovie.appendChild(this.createPoster());
+      cardMovie.addEventListener('click', this.openModal.bind(this));
+      shadow.appendChild(cardMovie);
+      shadow.appendChild(this.style());
     }
+
+    createCard() {
+      const card = document.createElement('div');
+      card.classList.add('movie');
+      return card;
+    }
+
+    createPoster() {
+      const poster = document.createElement('img');
+      poster.src = this.movie.poster_path ?
+      `https://image.tmdb.org/t/p/original${this.movie.poster_path}`
+      : `https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg`;
+      this.movie.poster_path = poster.src;
+      poster.classList.add("movie__poster");
+      poster.title = this.movie.original_name || this.movie.original_title;
+      return poster;
+    }
+
+    createTitle() {
+      const title = document.createElement('h3');
+      title.textContent = this.movie.title || this.movie.name;
+      title.classList.add('movie__title');
+      return title;
+    }
+
+    openModal() {
+      this.parentElement.appendChild(new ModalBoxComponent(this.movie));
+    }
+
+    style() {
+      const style = document.createElement('style');
+      style.textContent = `
+      .movie__poster{
+        flex-grow: 2;
+        order: 2;
+        width: 100%;
+        object-fit: cover;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    }
+    .movie:hover{
+      opacity: 0.5;
+      cursor: pointer;
+    }
+    .movie
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 15px;
+        text-align: center;
+        height: auto;
+        background-color: #01b4e4;
+    }
+    .movie__title{
+      order: 1;
+      line-height: 1.5;
+      display: block;
+      flex-grow: 1;
+      order: 1;
+      line-height:60px;
+      height: 60px;
+      width: 98%;
+      margin: 0 1%;
+      color: #0d253f;
+      font-size: 12pt;
+    }
+      `;
+      return style;
+    }
+
 }
+
+customElements.define('movie-card', MovieComponent);

@@ -25,42 +25,6 @@ section{
     display: grid;
     grid-gap: 0rem;
 }
-.posterMovies{
-    flex-grow: 2;
-    order: 2;
-    width: 100%;
-    object-fit: cover;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-}
-.movies:hover{
-  opacity: 0.5;
-  cursor: pointer;
-}
-.movies
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 15px;
-    text-align: center;
-    height: auto;
-    background-color: #01b4e4;
-}
-.titulo{
-    flex-grow: 1;
-    order: 1;
-    line-height:60px;
-    height: 60px;
-    width: 98%;
-    margin: 0 1%;
-}
-h3{
-    line-height: 1.5;
-    display: inline-block;
-    vertical-align: middle;
-    color: #0d253f;
-    font-size: 12pt;
-  }
 ::-webkit-scrollbar {
     width: 12px;
     background-color: #0d253f;

@@ -1,63 +1,51 @@
-  a{
+  .item__text{
     padding: 15px 15px;
     color: #83e49d;
     text-decoration: none;
     font-weight: 600;
   }
-  a:hover{
+  .item__text:hover{
     color: #01b4e4;
   }
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  nav {
+
+  .navbar {
     z-index: 1;
     height: 50px;
     background:  #01172e;
-    position: relative;
-  }
-  .sticky + section{
-    padding-top: 65px;
+    position: sticky;
+    top: 0;
   }
 
-  .menuLayer:hover{
+  .menu__item:hover{
     background-color: #0d253f;
     border-radius: 25px;
     text-decoration: none;
     color: #01b4e4;
     cursor: pointer;
   }
-  #home{
+  .menu__button{
     padding: 3px 15px;
     margin: 0;
   }
-  ul {
+  .navbar__menu {
     list-style-type: none;
     background-color: #01172e;
   }
-  #home a:hover {
-    text-decoration: none;
-  }
-  #menu li {
-    height: 50px;
-  }
-  .logo{
+  .menu__logo{
     padding-top: 10px;
     width: 200px;
     height: 40px;
   }
-  .menuIcon{
+  .menu__button__icon{
     width: 40px;
     height: 40px;
     filter: invert(84%) sepia(37%) saturate(448%) hue-rotate(74deg) brightness(92%) contrast(94%);
   }
-  .menuIcon:hover{
+  .menu__button__icon:hover{
     filter: invert(72%) sepia(38%) saturate(7079%) hue-rotate(153deg) brightness(93%) contrast(104%);
   }
   /* menu celular */
-  #menu {
+  .navbar__menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -66,17 +54,18 @@
   .toggle {
     order: 1;
   }
-  .menuLayer {
+  .menu__item {
     width: 100vw;
     text-align: center;
     order: 3;
+    height: 50px;
     display: none;
     padding: 15px 15px;
     color: #83e49d;
     text-decoration: none;
     font-weight: 600;
   }
-  .menuLayer.active {
+  .menu__item.active {
     display: block;
   }
   /* menu Desktop */
@@ -84,21 +73,19 @@
     nav{
         height: 50px;
     }
-    .menuLayer {
+    .menu__item {
       display: block;
       width: auto;
       padding: 15px 10px;
+      order: 1;
     }
     .toggle {
       display: none;
     }
-    #home {
+    .menu__button {
       order: 0;
     }
-    .menuLayer {
-      order: 1;
-    }
-    #menu{
+    .navbar__menu{
         justify-content: flex-start;
     }
   }

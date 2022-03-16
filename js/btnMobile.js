@@ -1,10 +1,9 @@
-// menu mobile
 $(function() {
     $(".toggle").on("click", function() {
-        if ($(".menuLayer").hasClass("active")) {
-            $(".menuLayer").removeClass("active");
+        if ($(".menu__item").hasClass("active")) {
+            $(".menu__item").removeClass("active");
         } else {
-            $(".menuLayer").addClass("active");
+            $(".menu__item").addClass("active");
         }
     });
   });
