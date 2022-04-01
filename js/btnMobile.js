@@ -1,9 +1,8 @@
-$(function() {
-    $(".toggle").on("click", function() {
-        if ($(".menu__item").hasClass("active")) {
-            $(".menu__item").removeClass("active");
-        } else {
-            $(".menu__item").addClass("active");
-        }
-    });
-  });
+document.querySelector('.toggle').addEventListener('click',() => {
+    const menuItems = document.querySelectorAll('.menu__item');
+    if (menuItems[0].classList.contains('active')) {
+        menuItems.forEach((item) => item.classList.remove('active'));
+    } else {
+        menuItems.forEach((item) => item.classList.add('active'));
+    }
+});

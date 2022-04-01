@@ -6,7 +6,7 @@ export class MovieComponent extends HTMLElement {
       this.build();
     }
     build() {
-      const shadow = this.attachShadow({mode: 'open'});
+      const shadow = this.attachShadow({mode: 'closed'});
       const cardMovie = this.createCard();
       cardMovie.appendChild(this.createTitle());
       cardMovie.appendChild(this.createPoster());
