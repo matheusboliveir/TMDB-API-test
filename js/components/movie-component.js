@@ -11,6 +11,7 @@ export class MovieComponent extends HTMLElement {
       cardMovie.appendChild(this.createTitle());
       cardMovie.appendChild(this.createPoster());
       cardMovie.addEventListener('click', this.openModal.bind(this));
+      cardMovie.setAttribute('tabindex',9);
       shadow.appendChild(cardMovie);
       shadow.appendChild(this.style());
     }
@@ -33,7 +34,7 @@ export class MovieComponent extends HTMLElement {
     }
 
     createTitle() {
-      const title = document.createElement('h3');
+      const title = document.createElement('span');
       title.textContent = this.movie.title || this.movie.name;
       title.classList.add('movie__title');
       return title;
@@ -59,21 +60,21 @@ export class MovieComponent extends HTMLElement {
     }
     .movie
     {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 15px;
-        text-align: center;
-        height: auto;
-        background-color: #01b4e4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 15px;
+      text-align: center;
+      height: auto;
+      background-color: #01b4e4;
     }
     .movie__title{
       order: 1;
       line-height: 1.5;
       display: block;
       flex-grow: 1;
-      order: 1;
       line-height:60px;
+      font-weight: 600;
       height: 60px;
       width: 98%;
       margin: 0 1%;

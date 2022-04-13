@@ -4,61 +4,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="UTF-8" />
     <title>100 melhores TMDB</title>
-    <link rel="stylesheet" href="CSS/style.css" />
-    <link rel="stylesheet" href="CSS/bottomMenu.css" />
+    <script
+      src="https://kit.fontawesome.com/bee747af19.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="CSS/navMenu.css" />
   </head>
 
-  <body>
-    <header>
-      <img
-        id="banner"
-        class="banner"
-        src="https://i.ibb.co/gzdRMCm/banner-TMDB.jpg"
-      />
-      <div id="nav"></div>
-    </header>
-    <nav class="navbar">
+  <body style="background-color: darkblue">
+    <div id="modalBoxDiv"></div>
+    <nav-menu></nav-menu>
+    <!-- <nav class="navbar">
       <ul class="navbar__menu" id="menu">
         <li>
-          <a id="home" href="index.html?categoria=movie/top_rated"
-            ><img
-              class="menu__logo"
-              src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
-              alt="home"
-          /></a>
-        </li>
-        <li class="toggle">
-          <a class="menu__button" id="home"
-            ><img
-              class="menu__button-icon"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/VisualEditor_-_Icon_-_Menu.svg/768px-VisualEditor_-_Icon_-_Menu.svg.png"
-              alt="menu"
-          /></a>
-        </li>
-        <li class="menu__item">
-          <a class="item__text" href="index.html?categoria=movie/top_rated"
-            >Top 100 filmes</a
+          <a
+            href="#menuExpandButton"
+            title="botão abre menu"
+            class="center menu__item menu__expand-button right-arrow-icon"
+            id="menuExpandButton"
           >
+            <span aria-hidden="true" class="item__text hidden film-icon"
+              >TMDB - Movies App</span
+            >
+          </a>
         </li>
-        <li class="menu__item">
-          <a class="item__text" href="index.html?categoria=tv/top_rated"
-            >Top 100 séries</a
+        <li>
+          <a
+            class="center menu__item home-icon"
+            href="index.html?categoria=movie/top_rated"
           >
+            <span class="item__text hidden">Home</span>
+          </a>
         </li>
-        <li class="menu__item">
-          <a class="item__text" href="index.html?categoria=movie/now_playing"
-            >Filmes em cartaz</a
+        <li>
+          <div class="center menu__item reverse">
+            <input
+              title="pesquisa"
+              class="item__input hidden"
+              id="search"
+              type="search"
+            />
+            <button
+              id="searchButton"
+              class="item__button magnifying-glass-icon"
+              title="pesquisar"
+            ></button>
+          </div>
+        </li>
+        <li>
+          <a
+            class="center menu__item clapperboard-icon"
+            href="index.html?categoria=movie/top_rated"
           >
+            <span class="item__text hidden">Filmes</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="center menu__item series-icon"
+            href="index.html?categoria=tv/top_rated"
+          >
+            <span class="item__text hidden">Séries</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="center menu__item icon in-theaters-icon"
+            href="index.html?categoria=movie/now_playing"
+          >
+            <span label="campo de pesquisa" class="item__text hidden"
+              >Em cartaz</span
+            >
+          </a>
+        </li>
+        <li>
+          <a
+            class="center menu__item categories-icon"
+            href="index.html?categoria=movie/now_playing"
+          >
+            <span class="item__text hidden">Categorias</span>
+          </a>
+        </li>
+        <li>
+          <div class="menu__item">
+            <img
+              src="imgs/TMDB Logo.svg"
+              class="TMDB-logo hidden"
+              alt="TMDB logo"
+            />
+          </div>
         </li>
       </ul>
-      <a href="#section">
-        <div id="arrow"></div>
-      </a>
-    </nav>
-    <section id="section"></section>
-    <footer></footer>
-    <div id="modalBoxDiv"></div>
+    </nav> -->
+    <section class="movies__container" id="section"></section>
     <script type="module" src="js/main.js"></script>
-    <script src="js/btnMobile.js"></script>
+    <script type="module" src="js/components/nav-menu-component.js"></script>
   </body>
 </html>

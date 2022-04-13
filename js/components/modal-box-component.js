@@ -8,7 +8,6 @@ export class ModalBoxComponent extends HTMLElement {
 
     build() {
         const shadow = this.attachShadow({ mode: 'open' });
-        
         const modal = this.createDiv('modal');
         const modalContainer = this.createDiv('modal__container');
         const modalContent = this.createDiv('modal__content');
@@ -29,8 +28,6 @@ export class ModalBoxComponent extends HTMLElement {
 
         shadow.appendChild(modal);
         shadow.appendChild(this.style());
-
-
     };
 
     createDiv(className = '') {
