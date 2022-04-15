@@ -130,9 +130,3 @@
   left: 44px;
   bottom: 16px;
 }
-
-@media (min-width: 750px) {
-  .navbar {
-    position: sticky;
-  }
-}

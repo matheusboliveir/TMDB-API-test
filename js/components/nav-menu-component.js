@@ -1,4 +1,3 @@
-
 export class NavMenuComponent extends HTMLElement {
     constructor() {
         super();
@@ -22,13 +21,14 @@ export class NavMenuComponent extends HTMLElement {
             this.createMenuItem('Categorias','#','categories-icon'),
             this.createLogo()
         ];
-
+        
+        openButton.children[0].addEventListener('click', this.openMenu.bind(this));
+        searchBar.children[0].children[1].addEventListener('click', this.searchField.bind(this));
+        searchBar.children[0].children[0].addEventListener('keypress',
+        event => event.key === 'Enter' ? this.searchField.bind(this)(searchBar.children[0].children[0]) : null);
         this.listItems.forEach(item => {
             menu.appendChild(item);
         });
-        openButton.children[0].addEventListener('click', this.openMenu.bind(this));
-        searchBar.children[0].children[1].addEventListener('click', this.searchField.bind(this));
-        searchBar.children[0].children[0].addEventListener('keypress',event => event.key === 'Enter' ? this.searchField.bind(this)(searchBar.children[0].children[0]) : null);
         nav.appendChild(menu);
         shadow.appendChild(this.createStyleLink('CSS/navMenu.css'));
         shadow.appendChild(this.createStyleLink('CSS/styles.css'));
@@ -142,6 +142,10 @@ export class NavMenuComponent extends HTMLElement {
                 console.log(formattedSearch);
                 break;
         };
+    }
+
+    selected(item) {
+        this.listItems[item].children[0].classList.add('menu__item--active');
     }
 
 }
